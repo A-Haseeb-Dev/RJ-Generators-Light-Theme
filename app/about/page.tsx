@@ -59,8 +59,8 @@ export default function AboutPage() {
               className="relative aspect-[4/3] bg-zinc-100 overflow-hidden"
             >
               <Image
-                src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?q=80&w=1000&auto=format&fit=crop"
-                alt="Engineering Team"
+                src="/images/hero_generator_2_1786218304926.jpg"
+                alt="Generator stock at RJ Generators"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
@@ -75,8 +75,8 @@ export default function AboutPage() {
               className="relative aspect-[4/3] bg-zinc-100 overflow-hidden md:translate-y-12"
             >
               <Image
-                src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1000&auto=format&fit=crop"
-                alt="Manufacturing Facility"
+                src="/images/product_generator_1_1786218321227.jpg"
+                alt="Quality-checked generators for sale"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
@@ -116,36 +116,54 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
+                className="group bg-white border border-zinc-200 overflow-hidden"
               >
-                <Shield className="w-10 h-10 text-blue-600 mb-6" />
-                <h3 className="text-xl font-bold mb-4">Fair & Transparent Pricing</h3>
-                <p className="text-zinc-600 leading-relaxed text-sm">
-                  Sellers receive honest, market-based valuations with no pressure and no hidden fees. What we quote is what you get paid.
-                </p>
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <Image src="/images/hero_generator_1_1786218289285.jpg" alt="Fair pricing on generator purchases" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                </div>
+                <div className="p-8">
+                  <Shield className="w-10 h-10 text-blue-600 mb-6" />
+                  <h3 className="text-xl font-bold mb-4">Fair & Transparent Pricing</h3>
+                  <p className="text-zinc-600 leading-relaxed text-sm">
+                    Sellers receive honest, market-based valuations with no pressure and no hidden fees. What we quote is what you get paid.
+                  </p>
+                </div>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
+                className="group bg-white border border-zinc-200 overflow-hidden"
               >
-                <Zap className="w-10 h-10 text-blue-600 mb-6" />
-                <h3 className="text-xl font-bold mb-4">Trusted Inspections</h3>
-                <p className="text-zinc-600 leading-relaxed text-sm">
-                  Every generator we buy is assessed honestly, and every generator we sell passes a rigorous 200-point inspection and load test before it leaves our yard.
-                </p>
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <Image src="/images/maintenance_technician_1786218881705.jpg" alt="Trusted generator inspections" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                </div>
+                <div className="p-8">
+                  <Zap className="w-10 h-10 text-blue-600 mb-6" />
+                  <h3 className="text-xl font-bold mb-4">Trusted Inspections</h3>
+                  <p className="text-zinc-600 leading-relaxed text-sm">
+                    Every generator we buy is assessed honestly, and every generator we sell passes a rigorous 200-point inspection and load test before it leaves our yard.
+                  </p>
+                </div>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 }}
+                className="group bg-white border border-zinc-200 overflow-hidden"
               >
-                <Wrench className="w-10 h-10 text-blue-600 mb-6" />
-                <h3 className="text-xl font-bold mb-4">Fast Payments & Support</h3>
-                <p className="text-zinc-600 leading-relaxed text-sm">
-                  We pay on the spot at collection, provide free nationwide collection, and back every sale with warranty and after-sales support.
-                </p>
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <Image src="/images/product_generator_3_1786218348852.jpg" alt="Fast payment and support" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                </div>
+                <div className="p-8">
+                  <Wrench className="w-10 h-10 text-blue-600 mb-6" />
+                  <h3 className="text-xl font-bold mb-4">Fast Payments & Support</h3>
+                  <p className="text-zinc-600 leading-relaxed text-sm">
+                    We pay on the spot at collection, provide free nationwide collection, and back every sale with warranty and after-sales support.
+                  </p>
+                </div>
               </motion.div>
             </div>
           </div>

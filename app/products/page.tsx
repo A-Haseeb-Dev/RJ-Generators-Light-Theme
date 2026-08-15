@@ -19,7 +19,7 @@ export default function ProductsPage() {
       output: "500kVA - 2500kVA",
       condition: "New & Refurbished",
       description: "Heavy-duty diesel generators built for continuous operation. Fully load-tested, certified, and ready for immediate delivery with a written warranty.",
-      image: "https://images.unsplash.com/photo-1707307316651-25b6a1bef122?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8SEQtU2VyaWVzJTIwZ2VuZXJhdG9yfGVufDB8fDB8fHww",
+      image: "/images/product_generator_1_1786218321227.jpg",
       features: ['200-Point Inspection', 'Sound Attenuated Enclosures', 'Backed by Warranty']
     },
     {
@@ -29,7 +29,7 @@ export default function ProductsPage() {
       output: "200kVA - 1000kVA",
       condition: "New & Refurbished",
       description: "Clean, efficient natural gas generators ideal for urban environments and long-term running. Low emissions and extended service intervals included.",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSdjlupl_xtuqJlZbFsSvBdX8mpxt6jfVJkauYaFJoVQ&s=10",
+      image: "/images/hero_generator_2_1786218304926.jpg",
       features: ['Ultra-Low Emissions', 'Extended Service Intervals', 'Certified & Load-Tested']
     },
     {
@@ -39,7 +39,7 @@ export default function ProductsPage() {
       output: "50kVA - 500kVA",
       condition: "Refurbished",
       description: "Towable, ruggedized generators for construction sites, events, and emergency deployment. Multi-voltage capability and DOT-approved trailers.",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpQd9Ud17Jggtz8KgGomX0LT8am5gnDtJkFPcDNBW6oA&s=10",
+      image: "/images/product_generator_3_1786218348852.jpg",
       features: ['DOT Approved Trailer', 'Multi-voltage Selector', '110% Fluid Containment']
     },
     {
@@ -49,7 +49,7 @@ export default function ProductsPage() {
       output: "100kVA - 800kVA",
       condition: "New & Used",
       description: "Marine-grade generators for offshore platforms, commercial vessels, and coastal installations. Corrosion-resistant and class-certified.",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSQ3rkbwZXXQhujwzyRj6upIIMLB9ntCXuRXi--VygHg&s=10",
+      image: "/images/hero_generator_1_1786218289285.jpg",
       features: ['Corrosion-Resistant Coating', 'Keel Cooling Compatibility', 'Marine Society Certified']
     }
   ];
@@ -154,28 +154,34 @@ export default function ProductsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mt-24 bg-zinc-950 text-white p-10 lg:p-16 flex flex-col lg:flex-row lg:items-center justify-between gap-8"
+            className="mt-24 bg-zinc-950 text-white overflow-hidden relative"
           >
-            <div className="max-w-2xl">
-              <div className="flex items-center gap-3 mb-5">
-                <span className="w-12 h-0.5 bg-blue-500"></span>
-                <span className="font-mono text-sm tracking-widest uppercase text-blue-400 font-bold">
-                  We Buy Generators
-                </span>
-              </div>
-              <h2 className="text-3xl lg:text-4xl font-bold tracking-tight mb-4">Have a generator to sell?</h2>
-              <p className="text-zinc-400 text-lg leading-relaxed">
-                We buy all makes and models — new, used, or non-running. Send us your details, get a fair market valuation, and receive payment on the spot at collection.
-              </p>
+            <div className="absolute inset-0">
+              <Image src="/images/maintenance_technician_1786218881705.jpg" alt="Technician inspecting a generator we buy" fill sizes="100vw" className="object-cover opacity-25" referrerPolicy="no-referrer" />
+              <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/95 via-zinc-950/85 to-zinc-950/70"></div>
             </div>
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex justify-center items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 text-sm font-bold uppercase tracking-wider transition-colors shadow-xl shadow-blue-900/20 shrink-0"
-            >
-              Get an Instant Valuation <ArrowRight className="w-4 h-4" />
-            </a>
+            <div className="relative z-10 p-10 lg:p-16 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+              <div className="max-w-2xl">
+                <div className="flex items-center gap-3 mb-5">
+                  <span className="w-12 h-0.5 bg-blue-500"></span>
+                  <span className="font-mono text-sm tracking-widest uppercase text-blue-400 font-bold">
+                    We Buy Generators
+                  </span>
+                </div>
+                <h2 className="text-3xl lg:text-4xl font-bold tracking-tight mb-4">Have a generator to sell?</h2>
+                <p className="text-zinc-400 text-lg leading-relaxed">
+                  We buy all makes and models — new, used, or non-running. Send us your details, get a fair market valuation, and receive payment on the spot at collection.
+                </p>
+              </div>
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex justify-center items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 text-sm font-bold uppercase tracking-wider transition-colors shadow-xl shadow-blue-900/20 shrink-0"
+              >
+                Get an Instant Valuation <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
           </motion.section>
         </div>
       </main>

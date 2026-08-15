@@ -194,15 +194,19 @@ export default function Home() {
         </section>
 
         {/* Products Showcase Teaser */}
-        <section className="py-24 lg:py-32 bg-zinc-50 border-b border-zinc-200">
-          <div className="container mx-auto px-6 text-center max-w-3xl">
-            <h2 className="text-3xl lg:text-5xl font-bold tracking-tight mb-6">Generators Available for Sale</h2>
-            <p className="text-zinc-600 text-lg mb-10 leading-relaxed">
+        <section className="relative py-24 lg:py-32 bg-zinc-950 border-b border-zinc-200 overflow-hidden">
+          <div className="absolute inset-0">
+            <Image src="/images/product_generator_2_1786218335510.jpg" alt="Generators in stock" fill sizes="100vw" className="object-cover opacity-25" referrerPolicy="no-referrer" />
+            <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/80 via-zinc-950/70 to-zinc-950/90"></div>
+          </div>
+          <div className="container mx-auto px-6 text-center max-w-3xl relative z-10">
+            <h2 className="text-3xl lg:text-5xl font-bold tracking-tight mb-6 text-white">Generators Available for Sale</h2>
+            <p className="text-zinc-300 text-lg mb-10 leading-relaxed">
               Browse our current stock of new and refurbished generators — from portable units to heavy-duty industrial systems. Every unit is inspected, certified, and ready to run.
             </p>
             <Link
               href="/products"
-              className="inline-flex items-center gap-3 bg-zinc-900 hover:bg-blue-600 text-white px-10 py-5 text-sm font-bold uppercase tracking-wider transition-colors shadow-xl"
+              className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 text-sm font-bold uppercase tracking-wider transition-colors shadow-xl"
             >
               Browse Stock Directory <ArrowRight className="w-4 h-4" />
             </Link>
@@ -287,10 +291,10 @@ export default function Home() {
             
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { title: "Diesel Generators", desc: "All makes and models from 5kVA to 3000kVA, new or used.", icon: <Database className="w-6 h-6" /> },
-                { title: "Portable & Mobile Units", desc: "Towable and containerized generators for construction and events.", icon: <Activity className="w-6 h-6" /> },
-                { title: "Gas & Dual-Fuel Units", desc: "Natural gas, LPG, and biogas generators with clean output.", icon: <Factory className="w-6 h-6" /> },
-                { title: "Industrial & Marine", desc: "Heavy-duty, marine-grade, and custom-engineered systems.", icon: <Network className="w-6 h-6" /> }
+                { title: "Diesel Generators", desc: "All makes and models from 5kVA to 3000kVA, new or used.", icon: <Database className="w-6 h-6" />, image: "/images/product_generator_3_1786218348852.jpg" },
+                { title: "Portable & Mobile Units", desc: "Towable and containerized generators for construction and events.", icon: <Activity className="w-6 h-6" />, image: "/images/hero_generator_1_1786218289285.jpg" },
+                { title: "Gas & Dual-Fuel Units", desc: "Natural gas, LPG, and biogas generators with clean output.", icon: <Factory className="w-6 h-6" />, image: "/images/hero_generator_2_1786218304926.jpg" },
+                { title: "Industrial & Marine", desc: "Heavy-duty, marine-grade, and custom-engineered systems.", icon: <Network className="w-6 h-6" />, image: "/images/product_generator_2_1786218335510.jpg" }
               ].map((industry, i) => (
                 <motion.div 
                   key={i} 
@@ -298,13 +302,19 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="p-8 border border-zinc-200 bg-zinc-50 hover:bg-white hover:border-blue-300 hover:shadow-xl hover:shadow-blue-900/5 transition-all group flex flex-col h-full"
+                  className="border border-zinc-200 bg-zinc-50 hover:bg-white hover:border-blue-300 hover:shadow-xl hover:shadow-blue-900/5 transition-all group flex flex-col h-full overflow-hidden"
                 >
-                  <div className="w-12 h-12 bg-white shadow-sm border border-zinc-100 flex items-center justify-center mb-6 text-zinc-900 group-hover:text-blue-600 transition-colors">
-                    {industry.icon}
+                  <div className="relative aspect-[16/10] overflow-hidden">
+                    <Image src={industry.image} alt={industry.title} fill sizes="(max-width: 1024px) 100vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/40 to-transparent"></div>
                   </div>
-                  <h3 className="text-lg font-bold mb-3">{industry.title}</h3>
-                  <p className="text-zinc-600 text-sm leading-relaxed">{industry.desc}</p>
+                  <div className="p-8 flex flex-col flex-grow">
+                    <div className="w-12 h-12 bg-white shadow-sm border border-zinc-100 flex items-center justify-center mb-6 text-zinc-900 group-hover:text-blue-600 transition-colors -mt-12 relative z-10">
+                      {industry.icon}
+                    </div>
+                    <h3 className="text-lg font-bold mb-3">{industry.title}</h3>
+                    <p className="text-zinc-600 text-sm leading-relaxed">{industry.desc}</p>
+                  </div>
                 </motion.div>
               ))}
             </div>
