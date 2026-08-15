@@ -135,33 +135,57 @@ export default function Home() {
               
               <div className="lg:w-2/3">
                 <div className="grid sm:grid-cols-2 gap-6">
-                  <div className="bg-zinc-900 border border-zinc-800 p-8 sm:p-10 hover:bg-zinc-800/50 transition-colors">
-                    <Shield className="w-8 h-8 text-blue-500 mb-8" />
-                    <h3 className="text-2xl font-bold mb-4">Quality-Checked Stock</h3>
-                    <p className="text-zinc-400 leading-relaxed">
-                      Every generator we sell passes a rigorous 200-point inspection and load test. You buy with complete confidence, backed by our written warranty.
-                    </p>
+                  <div className="group bg-zinc-900 border border-zinc-800 overflow-hidden hover:bg-zinc-800/50 transition-colors">
+                    <div className="relative aspect-[16/10] overflow-hidden">
+                      <Image src="/images/product_generator_1_1786218321227.jpg" alt="Quality-checked generator stock" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent"></div>
+                    </div>
+                    <div className="p-8 sm:p-10">
+                      <Shield className="w-8 h-8 text-blue-500 mb-8" />
+                      <h3 className="text-2xl font-bold mb-4">Quality-Checked Stock</h3>
+                      <p className="text-zinc-400 leading-relaxed">
+                        Every generator we sell passes a rigorous 200-point inspection and load test. You buy with complete confidence, backed by our written warranty.
+                      </p>
+                    </div>
                   </div>
-                  <div className="bg-zinc-900 border border-zinc-800 p-8 sm:p-10 hover:bg-zinc-800/50 transition-colors sm:translate-y-12">
-                    <Zap className="w-8 h-8 text-blue-500 mb-8" />
-                    <h3 className="text-2xl font-bold mb-4">Fair Market Valuation</h3>
-                    <p className="text-zinc-400 leading-relaxed">
-                      Get a transparent, market-based valuation for your generator within hours. No pressure, no hidden fees — just a fair price based on condition and demand.
-                    </p>
+                  <div className="group bg-zinc-900 border border-zinc-800 overflow-hidden hover:bg-zinc-800/50 transition-colors sm:translate-y-12">
+                    <div className="relative aspect-[16/10] overflow-hidden">
+                      <Image src="/images/hero_generator_1_1786218289285.jpg" alt="Generator ready for valuation" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent"></div>
+                    </div>
+                    <div className="p-8 sm:p-10">
+                      <Zap className="w-8 h-8 text-blue-500 mb-8" />
+                      <h3 className="text-2xl font-bold mb-4">Fair Market Valuation</h3>
+                      <p className="text-zinc-400 leading-relaxed">
+                        Get a transparent, market-based valuation for your generator within hours. No pressure, no hidden fees — just a fair price based on condition and demand.
+                      </p>
+                    </div>
                   </div>
-                  <div className="bg-zinc-900 border border-zinc-800 p-8 sm:p-10 hover:bg-zinc-800/50 transition-colors">
-                    <Network className="w-8 h-8 text-blue-500 mb-8" />
-                    <h3 className="text-2xl font-bold mb-4">Instant Cash Payment</h3>
-                    <p className="text-zinc-400 leading-relaxed">
-                      We buy all makes and models, from portable units to 3000kVA industrial systems. Payment is made on the spot at collection — no waiting, no hassle.
-                    </p>
+                  <div className="group bg-zinc-900 border border-zinc-800 overflow-hidden hover:bg-zinc-800/50 transition-colors">
+                    <div className="relative aspect-[16/10] overflow-hidden">
+                      <Image src="/images/product_generator_2_1786218335510.jpg" alt="Generators we buy for instant cash" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent"></div>
+                    </div>
+                    <div className="p-8 sm:p-10">
+                      <Network className="w-8 h-8 text-blue-500 mb-8" />
+                      <h3 className="text-2xl font-bold mb-4">Instant Cash Payment</h3>
+                      <p className="text-zinc-400 leading-relaxed">
+                        We buy all makes and models, from portable units to 3000kVA industrial systems. Payment is made on the spot at collection — no waiting, no hassle.
+                      </p>
+                    </div>
                   </div>
-                  <div className="bg-zinc-900 border border-zinc-800 p-8 sm:p-10 hover:bg-zinc-800/50 transition-colors sm:translate-y-12">
-                    <Wrench className="w-8 h-8 text-blue-500 mb-8" />
-                    <h3 className="text-2xl font-bold mb-4">Trade-In & Upgrades</h3>
-                    <p className="text-zinc-400 leading-relaxed">
-                      Upgrade to a newer, more efficient unit and we will deduct the value of your old generator from the price. One phone call handles everything.
-                    </p>
+                  <div className="group bg-zinc-900 border border-zinc-800 overflow-hidden hover:bg-zinc-800/50 transition-colors sm:translate-y-12">
+                    <div className="relative aspect-[16/10] overflow-hidden">
+                      <Image src="/images/hero_generator_2_1786218304926.jpg" alt="Trade-in upgrade generator" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent"></div>
+                    </div>
+                    <div className="p-8 sm:p-10">
+                      <Wrench className="w-8 h-8 text-blue-500 mb-8" />
+                      <h3 className="text-2xl font-bold mb-4">Trade-In & Upgrades</h3>
+                      <p className="text-zinc-400 leading-relaxed">
+                        Upgrade to a newer, more efficient unit and we will deduct the value of your old generator from the price. One phone call handles everything.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -320,8 +344,8 @@ export default function Home() {
               </div>
               <div className="relative aspect-square lg:aspect-auto lg:h-[600px] bg-zinc-200">
                 <Image 
-                  src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=1000&auto=format&fit=crop" 
-                  alt="Technician performing maintenance" 
+                  src="/images/maintenance_technician_1786218881705.jpg" 
+                  alt="Technician inspecting a generator during valuation" 
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw" 
                   className="object-cover"
