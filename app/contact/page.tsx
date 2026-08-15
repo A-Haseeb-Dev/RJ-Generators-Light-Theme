@@ -1,0 +1,166 @@
+"use client";
+
+import { Mail, MapPin, Phone, Clock } from "lucide-react";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { FloatingWhatsApp } from "@/components/floating-whatsapp";
+import { motion } from "motion/react";
+
+export default function ContactPage() {
+  const whatsappNumber = "1234567890"; // Placeholder
+
+  return (
+    <div className="min-h-screen bg-white flex flex-col font-sans text-zinc-900 selection:bg-blue-500/30">
+      <Header />
+      
+      <main className="flex-grow pt-32 pb-24">
+        <section className="container mx-auto px-6 mb-16 border-b border-zinc-200 pb-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="flex items-center gap-3 mb-6"
+          >
+            <span className="w-12 h-0.5 bg-blue-600"></span>
+            <span className="font-mono text-sm tracking-widest uppercase text-blue-600 font-bold">
+              Contact & Inquiries
+            </span>
+          </motion.div>
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl lg:text-6xl font-bold tracking-tight mb-6"
+          >
+            Get in touch.
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-zinc-500 max-w-2xl text-lg leading-relaxed"
+          >
+            Whether you want to sell a generator, buy one, request a valuation, or make a general inquiry, our buying and sales teams are ready to assist.
+          </motion.p>
+        </section>
+
+        <section className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16">
+            {/* Contact Information */}
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="space-y-12"
+            >
+                <div>
+                  <h2 className="text-2xl font-bold mb-8">Global Headquarters</h2>
+                  <ul className="space-y-6">
+                    <li className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-zinc-100 flex items-center justify-center shrink-0">
+                        <MapPin className="w-5 h-5 text-blue-600" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold mb-1">Address</h3>
+                        <p className="text-zinc-600 text-sm leading-relaxed">123 Industrial Park Drive,<br />Tech City, TC 10293</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-zinc-100 flex items-center justify-center shrink-0">
+                        <Phone className="w-5 h-5 text-blue-600" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold mb-1">Phone</h3>
+                        <p className="text-zinc-600 text-sm">Buy & Sell: +1 (555) 123-4567</p>
+                        <p className="text-zinc-600 text-sm">Support: +1 (555) 987-6543</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-zinc-100 flex items-center justify-center shrink-0">
+                        <Mail className="w-5 h-5 text-blue-600" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold mb-1">Email</h3>
+                        <p className="text-zinc-600 text-sm">sales@rjgenerators.com</p>
+                        <p className="text-zinc-600 text-sm">buyback@rjgenerators.com</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-zinc-900 text-white p-8">
+                  <h2 className="text-xl font-bold mb-6">Operating Hours</h2>
+                  <ul className="space-y-6">
+                    <li className="flex items-start gap-4">
+                      <Clock className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+                      <div>
+                        <h3 className="font-bold mb-1">Buying & Sales Desk</h3>
+                        <p className="text-zinc-400 text-sm">Monday - Friday: 08:00 - 18:00 (EST)</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-4">
+                      <Clock className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+                      <div>
+                        <h3 className="font-bold mb-1 text-blue-400">Collections & Support</h3>
+                        <p className="text-zinc-400 text-sm">Available 24/7/365</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+            </motion.div>
+
+            {/* Inquiry Form */}
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="bg-zinc-50 p-8 lg:p-12 border border-zinc-200"
+            >
+              <h2 className="text-2xl font-bold mb-8">Send an Inquiry</h2>
+              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="space-y-2 col-span-2 sm:col-span-1">
+                    <label htmlFor="firstName" className="block text-sm font-bold text-zinc-900">First Name</label>
+                    <input type="text" id="firstName" className="w-full bg-white border border-zinc-300 px-4 py-3 text-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors" placeholder="John" />
+                  </div>
+                  <div className="space-y-2 col-span-2 sm:col-span-1">
+                    <label htmlFor="lastName" className="block text-sm font-bold text-zinc-900">Last Name</label>
+                    <input type="text" id="lastName" className="w-full bg-white border border-zinc-300 px-4 py-3 text-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors" placeholder="Doe" />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="email" className="block text-sm font-bold text-zinc-900">Company Email</label>
+                  <input type="email" id="email" className="w-full bg-white border border-zinc-300 px-4 py-3 text-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors" placeholder="john@company.com" />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="subject" className="block text-sm font-bold text-zinc-900">Subject</label>
+                  <select id="subject" className="w-full bg-white border border-zinc-300 px-4 py-3 text-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors">
+                    <option>I Want to Sell a Generator</option>
+                    <option>I Want to Buy a Generator</option>
+                    <option>Request a Free Valuation</option>
+                    <option>Trade-In / Upgrade Inquiry</option>
+                    <option>Parts & Service Support</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="message" className="block text-sm font-bold text-zinc-900">Message</label>
+                  <textarea id="message" rows={5} className="w-full bg-white border border-zinc-300 px-4 py-3 text-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors" placeholder="Tell us about the generator you want to buy or sell (make, model, kVA, condition)"></textarea>
+                </div>
+                <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-sm font-bold uppercase tracking-wider transition-colors">
+                  Submit Inquiry
+                </button>
+                <p className="text-xs text-zinc-500 text-center mt-4">
+                  For immediate assistance, please use the WhatsApp chat or call our buying and sales line.
+                </p>
+              </form>
+            </motion.div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+      <FloatingWhatsApp phoneNumber={whatsappNumber} />
+    </div>
+  );
+}

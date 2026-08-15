@@ -1,0 +1,6 @@
+{
+  "name": "RJ Generators",
+  "description": "Buy and sell generators. Sale and purchase of new and used industrial generators.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
