@@ -27,24 +27,6 @@ export function Footer() {
             <p className="text-sm leading-relaxed mb-6 text-zinc-400">
               Your trusted dealer for the sale and purchase of generators. We buy all makes and models and sell quality-checked, certified units backed by warranty.
             </p>
-            <div>
-              <h4 className="text-white font-bold mb-5 uppercase tracking-wider text-xs font-mono">Follow Us</h4>
-              <ul className="flex flex-wrap gap-3">
-                {socials.map((social) => (
-                  <li key={social.name}>
-                    <a
-                      href="#"
-                      aria-label={social.name}
-                      title={`${social.name} — ${social.handle}`}
-                      className="flex items-center gap-2 bg-zinc-900 border border-zinc-800 hover:bg-blue-600 hover:border-blue-600 hover:text-white text-zinc-300 px-3 py-2 text-xs font-semibold transition-colors"
-                    >
-                      {social.icon}
-                      <span>{social.handle}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
 
           {/* Directory */}
@@ -93,11 +75,26 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-zinc-900 text-xs font-medium text-zinc-500 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="pt-8 border-t border-zinc-900 text-xs font-medium text-zinc-500 flex flex-col lg:flex-row justify-between items-center gap-6">
           <div className="flex flex-col gap-1">
             <p>&copy; {new Date().getFullYear()} RJ Generators. All deals secured.</p>
             <p className="text-zinc-600">Powered By &quot;K&amp;H TECH SOL&quot;</p>
           </div>
+          <ul className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2">
+            {socials.map((social) => (
+              <li key={social.name}>
+                <a
+                  href="#"
+                  aria-label={social.name}
+                  title={`${social.name} — ${social.handle}`}
+                  className="inline-flex items-center gap-2 text-zinc-400 hover:text-blue-400 transition-colors"
+                >
+                  {social.icon}
+                  <span>{social.handle}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
           <div className="flex gap-6">
             <Link href="#" className="hover:text-white transition-colors">Privacy</Link>
             <Link href="#" className="hover:text-white transition-colors">Terms</Link>
