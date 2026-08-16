@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
@@ -54,45 +53,6 @@ export default function ProductsPage() {
       features: ['Corrosion-Resistant Coating', 'Keel Cooling Compatibility', 'Marine Society Certified']
     }
   ];
-
-  const [form, setForm] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    company: "",
-    interest: "",
-    quantity: "",
-    location: "",
-    details: "",
-  });
-
-  const updateField = (field: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setForm({ ...form, [field]: e.target.value });
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const message = [
-      "BUY A GENERATOR — CUSTOMER PURCHASE INQUIRY",
-      "---------------------------------------------",
-      `Customer Name: ${form.name}`,
-      `Phone: ${form.phone}`,
-      `Email: ${form.email}`,
-      `Company: ${form.company}`,
-      `Product Interest: ${form.interest}`,
-      `Quantity: ${form.quantity}`,
-      `Delivery Location: ${form.location}`,
-      `Details: ${form.details}`,
-    ]
-      .filter((line) => !line.endsWith(": "))
-      .join("\n");
-
-    window.open(buildWhatsAppUrl(message), "_blank", "noopener,noreferrer");
-  };
-
-  const inputClass =
-    "w-full bg-white border border-zinc-300 px-4 py-3 text-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors";
-  const labelClass = "block text-sm font-bold text-zinc-900";
 
   return (
     <div className="min-h-screen bg-white flex flex-col font-sans text-zinc-900 selection:bg-blue-500/30">
@@ -173,121 +133,20 @@ export default function ProductsPage() {
                       </li>
                     ))}
                   </ul>
-                  <div className="pt-8 border-t border-zinc-100 mt-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                    <a
-                      href="#buy-form"
-                      className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-zinc-900 group-hover:text-blue-600 transition-colors"
-                    >
-                      Buy Now — Customer Inquiry <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </a>
+                  <div className="pt-8 border-t border-zinc-100 mt-auto">
                     <a
                       href={buildWhatsAppUrl(`Hello! I am interested in the ${product.name} (${product.type}) from RJ Generators. Please share pricing and availability.`)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs font-bold uppercase tracking-wider text-blue-600 hover:text-blue-700 transition-colors"
+                      className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-zinc-900 group-hover:text-blue-600 transition-colors"
                     >
-                      Or Chat On WhatsApp
+                      Request Pricing & Availability <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </a>
                   </div>
                 </div>
               </motion.div>
             ))}
           </div>
-
-          {/* Customer Purchase Inquiry Form */}
-          <motion.section
-            id="buy-form"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mt-24 border border-zinc-200 bg-zinc-50"
-          >
-            <div className="grid lg:grid-cols-2 gap-16 items-start p-10 lg:p-16">
-              <div className="lg:sticky lg:top-32">
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="w-12 h-0.5 bg-blue-600"></span>
-                  <span className="font-mono text-sm tracking-widest uppercase text-blue-600 font-bold">
-                    Customer Purchase Inquiry
-                  </span>
-                </div>
-                <h2 className="text-3xl lg:text-4xl font-bold tracking-tight mb-6">Ready to buy? Tell us about you.</h2>
-                <p className="text-lg text-zinc-500 leading-relaxed mb-10">
-                  Register your purchase with our sales team. Fill in your customer details and the unit you want —
-                  your inquiry opens directly in WhatsApp where our sales desk confirms pricing, stock, and delivery.
-                </p>
-                <ul className="space-y-5">
-                  {[
-                    "Live pricing & availability confirmation",
-                    "New, refurbished, and used units",
-                    "Nationwide delivery available",
-                    "Warranty backed on every sale"
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-4">
-                      <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
-                        <CheckCircle2 className="w-4 h-4 text-blue-600" />
-                      </div>
-                      <span className="font-semibold text-zinc-800">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <form className="space-y-6" onSubmit={handleSubmit}>
-                <h3 className="text-2xl font-bold mb-2">Buyer / Customer Details</h3>
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="space-y-2 col-span-2 sm:col-span-1">
-                    <label htmlFor="name" className={labelClass}>Full Name *</label>
-                    <input required type="text" id="name" value={form.name} onChange={updateField("name")} className={inputClass} placeholder="John Doe" />
-                  </div>
-                  <div className="space-y-2 col-span-2 sm:col-span-1">
-                    <label htmlFor="phone" className={labelClass}>Phone *</label>
-                    <input required type="tel" id="phone" value={form.phone} onChange={updateField("phone")} className={inputClass} placeholder="+1 (555) 000-0000" />
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="space-y-2 col-span-2 sm:col-span-1">
-                    <label htmlFor="email" className={labelClass}>Email</label>
-                    <input type="email" id="email" value={form.email} onChange={updateField("email")} className={inputClass} placeholder="john@company.com" />
-                  </div>
-                  <div className="space-y-2 col-span-2 sm:col-span-1">
-                    <label htmlFor="company" className={labelClass}>Company / Organization</label>
-                    <input type="text" id="company" value={form.company} onChange={updateField("company")} className={inputClass} placeholder="ACME Industries" />
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="space-y-2 col-span-2 sm:col-span-1">
-                    <label htmlFor="interest" className={labelClass}>Product Of Interest *</label>
-                    <select required id="interest" value={form.interest} onChange={updateField("interest")} className={inputClass}>
-                      <option value="">Select...</option>
-                      {products.map((p) => (
-                        <option key={p.id} value={`${p.name} (${p.output})`}>{p.name} — {p.output}</option>
-                      ))}
-                      <option>Other / Not Listed</option>
-                    </select>
-                  </div>
-                  <div className="space-y-2 col-span-2 sm:col-span-1">
-                    <label htmlFor="quantity" className={labelClass}>Quantity</label>
-                    <input type="text" id="quantity" value={form.quantity} onChange={updateField("quantity")} className={inputClass} placeholder="e.g. 1" />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="location" className={labelClass}>Delivery Location *</label>
-                  <input required type="text" id="location" value={form.location} onChange={updateField("location")} className={inputClass} placeholder="City, State" />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="details" className={labelClass}>Additional Details</label>
-                  <textarea id="details" rows={4} value={form.details} onChange={updateField("details")} className={inputClass} placeholder="Load requirements, installation needs, or anything else our sales team should know."></textarea>
-                </div>
-                <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-sm font-bold uppercase tracking-wider transition-colors">
-                  Submit On WhatsApp
-                </button>
-                <p className="text-xs text-zinc-500 text-center mt-4">
-                  Submitting opens WhatsApp with your details pre-filled — no account needed.
-                </p>
-              </form>
-            </div>
-          </motion.section>
 
           {/* Sell Your Generator CTA */}
           <motion.section 
