@@ -6,9 +6,9 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
 import { motion } from "motion/react";
+import { WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 export default function AboutPage() {
-  const whatsappNumber = "1234567890"; // Placeholder
 
   return (
     <div className="min-h-screen bg-white flex flex-col font-sans text-zinc-900 selection:bg-blue-500/30">
@@ -218,7 +218,7 @@ export default function AboutPage() {
       </main>
 
       <Footer />
-      <FloatingWhatsApp phoneNumber={whatsappNumber} />
+      <FloatingWhatsApp phoneNumber={WHATSAPP_NUMBER} />
     </div>
   );
 }

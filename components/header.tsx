@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 interface HeaderProps {
   theme?: "dark" | "light";
@@ -27,9 +28,11 @@ export function Header({ theme = "light" }: HeaderProps) {
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Buy Generators", href: "/products" },
-    { name: "Sell to Us", href: "/contact" },
+    { name: "Sell to Us", href: "/sell" },
     { name: "Contact", href: "/contact" },
   ];
+
+  const whatsappUrl = buildWhatsAppUrl("Hello! I want to buy or sell a generator with RJ Generators.");
 
   return (
     <header
@@ -70,7 +73,7 @@ export function Header({ theme = "light" }: HeaderProps) {
               </Link>
             ))}
             <a
-              href="https://wa.me/1234567890?text=Hello"
+              href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               className={`px-5 py-2.5 text-sm font-medium rounded-full transition-all flex items-center gap-2 ${
@@ -141,7 +144,7 @@ export function Header({ theme = "light" }: HeaderProps) {
               <div className="flex flex-col gap-4">
                 <p className="text-sm font-mono text-zinc-500 uppercase tracking-widest">Get in touch</p>
                 <a
-                  href="https://wa.me/1234567890?text=Hello"
+                  href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-full font-bold transition-all active:scale-[0.98] shadow-lg shadow-blue-600/20"

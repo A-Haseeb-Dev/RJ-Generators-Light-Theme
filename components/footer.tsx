@@ -27,7 +27,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm font-medium">
               <li><Link href="/about" className="hover:text-blue-400 transition-colors">About Us</Link></li>
               <li><Link href="/products" className="hover:text-blue-400 transition-colors">Generators For Sale</Link></li>
-              <li><Link href="/contact" className="hover:text-blue-400 transition-colors">Sell Your Generator</Link></li>
+              <li><Link href="/sell" className="hover:text-blue-400 transition-colors">Sell Your Generator</Link></li>
               <li><Link href="/contact" className="hover:text-blue-400 transition-colors">Valuation & Support</Link></li>
             </ul>
           </div>

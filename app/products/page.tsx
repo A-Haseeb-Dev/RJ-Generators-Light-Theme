@@ -6,10 +6,10 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
 import { motion } from "motion/react";
+import { WHATSAPP_NUMBER, buildWhatsAppUrl } from "@/lib/whatsapp";
 
 export default function ProductsPage() {
-  const whatsappNumber = "1234567890"; // Placeholder
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hello! I am interested in buying a generator from RJ Generators.")}`;
+  const whatsappUrl = buildWhatsAppUrl("Hello! I am interested in buying a generator from RJ Generators.");
 
   const products = [
     {
@@ -135,7 +135,7 @@ export default function ProductsPage() {
                   </ul>
                   <div className="pt-8 border-t border-zinc-100 mt-auto">
                     <a
-                      href={whatsappUrl}
+                      href={buildWhatsAppUrl(`Hello! I am interested in the ${product.name} (${product.type}) from RJ Generators. Please share pricing and availability.`)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-zinc-900 group-hover:text-blue-600 transition-colors"
@@ -187,7 +187,7 @@ export default function ProductsPage() {
       </main>
 
       <Footer />
-      <FloatingWhatsApp phoneNumber={whatsappNumber} />
+      <FloatingWhatsApp phoneNumber={WHATSAPP_NUMBER} />
     </div>
   );
 }

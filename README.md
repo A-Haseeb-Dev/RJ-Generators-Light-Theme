@@ -11,6 +11,7 @@ Built with **Next.js 15** (App Router) + **React 19**, styled with **Tailwind CS
 | `/` | Home — hero, services (quality-checked stock, valuations, instant cash payment, trade-ins), stock teaser, testimonials, generator categories, how it works, FAQ, CTA |
 | `/products` | "Buy Generators — Current Stock" catalogue with condition badges and a "We Buy Generators" valuation CTA |
 | `/about` | Dealership story, core principles, trading stats |
+| `/sell` | "Sell to Us" — what we buy, how it works, and a sell-your-generator form |
 | `/contact` | Contact details and inquiry form (sell / buy / valuation / trade-in / parts & support) |
 
 ## Tech Stack
@@ -52,8 +53,9 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 app/
   page.tsx             # Home page
   about/page.tsx       # About / dealership story
-  contact/page.tsx     # Contact & inquiry form
+  contact/page.tsx     # Contact & inquiry form (submits via WhatsApp)
   products/page.tsx    # Generators for sale
+  sell/page.tsx        # Sell to Us (what we buy + sell form via WhatsApp)
   globals.css          # Global styles
   layout.tsx           # Root layout & metadata
 components/
@@ -65,6 +67,7 @@ components/
 hooks/
   use-mobile.ts
 lib/
+  whatsapp.ts          # WhatsApp number + URL builder (edit phone here)
   utils.ts
 public/images/         # Local generator images
 ```
@@ -73,7 +76,7 @@ public/images/         # Local generator images
 
 Update the placeholder business details in these files before going live:
 
-- **WhatsApp number** — `components/header.tsx` (lines with `wa.me/1234567890`), `app/page.tsx`, `app/products/page.tsx`, `app/about/page.tsx`, `app/contact/page.tsx` (`whatsappNumber` constant)
+- **WhatsApp number** — `lib/whatsapp.ts` (`WHATSAPP_NUMBER` constant). This drives all WhatsApp CTAs, forms, and the floating chat button site-wide.
 - **Phone / address / email** — `components/footer.tsx`, `app/contact/page.tsx`
 - **Site title & description** — `app/layout.tsx` (metadata) and `metadata.json`
 - **Stock catalogue** — product list in `app/products/page.tsx` (names, kVA output, condition, images, features)

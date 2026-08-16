@@ -10,10 +10,10 @@ import { HeroSlider } from "@/components/hero-slider";
 import { motion } from "motion/react";
 
 import { FaqAccordion } from "@/components/faq-accordion";
+import { WHATSAPP_NUMBER, buildWhatsAppUrl } from "@/lib/whatsapp";
 
 export default function Home() {
-  const whatsappNumber = "1234567890"; // Placeholder
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hello! I am interested in buying or selling a generator with RJ Generators.")}`;
+  const whatsappUrl = buildWhatsAppUrl("Hello! I am interested in buying or selling a generator with RJ Generators.");
 
   return (
     <div className="min-h-screen bg-white flex flex-col font-sans text-zinc-900 selection:bg-blue-500/3">
@@ -65,14 +65,12 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.8 }}
                 className="flex flex-col sm:flex-row gap-4"
               >
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/sell"
                   className="inline-flex justify-center items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-sm font-bold uppercase tracking-wider transition-colors"
                 >
                   Sell Your Generator <ArrowUpRight className="w-4 h-4" />
-                </a>
+                </Link>
                 <Link
                   href="/products"
                   className="inline-flex justify-center items-center gap-2 bg-transparent hover:bg-white/10 text-white border border-white/30 px-8 py-4 text-sm font-bold uppercase tracking-wider transition-colors"
@@ -125,7 +123,7 @@ export default function Home() {
                   <h2 className="text-3xl lg:text-5xl font-bold tracking-tight mb-6">A better way to buy and sell generators.</h2>
                   <p className="text-lg text-zinc-400 leading-relaxed mb-8">Whether you are upgrading, downsizing, or equipping a facility from scratch, our dealership makes the process transparent, fast, and completely hassle-free.</p>
                   <Link
-                    href="/contact"
+                    href="/sell"
                     className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white hover:text-blue-400 transition-colors"
                   >
                     Get a Free Valuation <ArrowRight className="w-4 h-4" />
@@ -410,7 +408,7 @@ export default function Home() {
       </main>
 
       <Footer />
-      <FloatingWhatsApp phoneNumber={whatsappNumber} />
+      <FloatingWhatsApp phoneNumber={WHATSAPP_NUMBER} />
     </div>
   );
 }

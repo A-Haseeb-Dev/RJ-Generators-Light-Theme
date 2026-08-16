@@ -1,13 +1,41 @@
 "use client";
 
+import { useState } from "react";
 import { Mail, MapPin, Phone, Clock } from "lucide-react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
 import { motion } from "motion/react";
+import { WHATSAPP_NUMBER, buildWhatsAppUrl } from "@/lib/whatsapp";
 
 export default function ContactPage() {
-  const whatsappNumber = "1234567890"; // Placeholder
+  const [form, setForm] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    subject: "I Want to Sell a Generator",
+    message: "",
+  });
+
+  const updateField = (field: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setForm({ ...form, [field]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const message = [
+      "NEW INQUIRY FROM WEBSITE",
+      "------------------------",
+      `Name: ${form.firstName} ${form.lastName}`.trim(),
+      `Email: ${form.email}`,
+      `Subject: ${form.subject}`,
+      `Message: ${form.message}`,
+    ]
+      .filter((line) => !line.endsWith(": ") && !line.endsWith(":"))
+      .join("\n");
+
+    window.open(buildWhatsAppUrl(message), "_blank", "noopener,noreferrer");
+  };
 
   return (
     <div className="min-h-screen bg-white flex flex-col font-sans text-zinc-900 selection:bg-blue-500/30">
@@ -117,24 +145,24 @@ export default function ContactPage() {
               className="bg-zinc-50 p-8 lg:p-12 border border-zinc-200"
             >
               <h2 className="text-2xl font-bold mb-8">Send an Inquiry</h2>
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-2 gap-6">
                   <div className="space-y-2 col-span-2 sm:col-span-1">
-                    <label htmlFor="firstName" className="block text-sm font-bold text-zinc-900">First Name</label>
-                    <input type="text" id="firstName" className="w-full bg-white border border-zinc-300 px-4 py-3 text-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors" placeholder="John" />
+                    <label htmlFor="firstName" className="block text-sm font-bold text-zinc-900">First Name *</label>
+                    <input required type="text" id="firstName" value={form.firstName} onChange={updateField("firstName")} className="w-full bg-white border border-zinc-300 px-4 py-3 text-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors" placeholder="John" />
                   </div>
                   <div className="space-y-2 col-span-2 sm:col-span-1">
-                    <label htmlFor="lastName" className="block text-sm font-bold text-zinc-900">Last Name</label>
-                    <input type="text" id="lastName" className="w-full bg-white border border-zinc-300 px-4 py-3 text-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors" placeholder="Doe" />
+                    <label htmlFor="lastName" className="block text-sm font-bold text-zinc-900">Last Name *</label>
+                    <input required type="text" id="lastName" value={form.lastName} onChange={updateField("lastName")} className="w-full bg-white border border-zinc-300 px-4 py-3 text-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors" placeholder="Doe" />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className="block text-sm font-bold text-zinc-900">Company Email</label>
-                  <input type="email" id="email" className="w-full bg-white border border-zinc-300 px-4 py-3 text-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors" placeholder="john@company.com" />
+                  <label htmlFor="email" className="block text-sm font-bold text-zinc-900">Company Email *</label>
+                  <input required type="email" id="email" value={form.email} onChange={updateField("email")} className="w-full bg-white border border-zinc-300 px-4 py-3 text-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors" placeholder="john@company.com" />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="subject" className="block text-sm font-bold text-zinc-900">Subject</label>
-                  <select id="subject" className="w-full bg-white border border-zinc-300 px-4 py-3 text-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors">
+                  <label htmlFor="subject" className="block text-sm font-bold text-zinc-900">Subject *</label>
+                  <select required id="subject" value={form.subject} onChange={updateField("subject")} className="w-full bg-white border border-zinc-300 px-4 py-3 text-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors">
                     <option>I Want to Sell a Generator</option>
                     <option>I Want to Buy a Generator</option>
                     <option>Request a Free Valuation</option>
@@ -145,13 +173,13 @@ export default function ContactPage() {
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="message" className="block text-sm font-bold text-zinc-900">Message</label>
-                  <textarea id="message" rows={5} className="w-full bg-white border border-zinc-300 px-4 py-3 text-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors" placeholder="Tell us about the generator you want to buy or sell (make, model, kVA, condition)"></textarea>
+                  <textarea id="message" rows={5} value={form.message} onChange={updateField("message")} className="w-full bg-white border border-zinc-300 px-4 py-3 text-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors" placeholder="Tell us about the generator you want to buy or sell (make, model, kVA, condition)"></textarea>
                 </div>
                 <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-sm font-bold uppercase tracking-wider transition-colors">
-                  Submit Inquiry
+                  Submit Inquiry On WhatsApp
                 </button>
                 <p className="text-xs text-zinc-500 text-center mt-4">
-                  For immediate assistance, please use the WhatsApp chat or call our buying and sales line.
+                  Your inquiry opens directly in WhatsApp with your details pre-filled. For immediate assistance, call our buying and sales line.
                 </p>
               </form>
             </motion.div>
@@ -160,7 +188,7 @@ export default function ContactPage() {
       </main>
 
       <Footer />
-      <FloatingWhatsApp phoneNumber={whatsappNumber} />
+      <FloatingWhatsApp phoneNumber={WHATSAPP_NUMBER} />
     </div>
   );
 }
