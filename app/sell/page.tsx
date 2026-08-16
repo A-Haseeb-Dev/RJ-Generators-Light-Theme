@@ -13,6 +13,7 @@ export default function SellPage() {
     name: "",
     email: "",
     phone: "",
+    company: "",
     make: "",
     model: "",
     output: "",
@@ -29,11 +30,12 @@ export default function SellPage() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const message = [
-      "SELL YOUR GENERATOR — NEW INQUIRY",
-      "------------------------------",
-      `Name: ${form.name}`,
+      "BUY FROM SUPPLIER — GENERATOR PURCHASE INQUIRY",
+      "-----------------------------------------------",
+      `Supplier Name: ${form.name}`,
       `Email: ${form.email}`,
       `Phone: ${form.phone}`,
+      `Company: ${form.company}`,
       `Make: ${form.make}`,
       `Model: ${form.model}`,
       `Output: ${form.output}`,
@@ -264,7 +266,8 @@ export default function SellPage() {
                 transition={{ duration: 0.6 }}
                 className="bg-zinc-50 p-8 lg:p-12 border border-zinc-200"
               >
-                <h3 className="text-2xl font-bold mb-8">Sell Your Generator</h3>
+                <h3 className="text-2xl font-bold mb-2">Supplier / Seller Details</h3>
+                <p className="text-sm text-zinc-500 mb-8">Register the unit you are selling so our buying team can value and purchase it from you.</p>
                 <form className="space-y-6" onSubmit={handleSubmit}>
                   <div className="grid grid-cols-2 gap-6">
                     <div className="space-y-2 col-span-2 sm:col-span-1">
@@ -276,9 +279,15 @@ export default function SellPage() {
                       <input required type="tel" id="phone" value={form.phone} onChange={updateField("phone")} className={inputClass} placeholder="+1 (555) 000-0000" />
                     </div>
                   </div>
-                  <div className="space-y-2">
-                    <label htmlFor="email" className={labelClass}>Email</label>
-                    <input type="email" id="email" value={form.email} onChange={updateField("email")} className={inputClass} placeholder="john@company.com" />
+                  <div className="grid grid-cols-2 gap-6">
+                    <div className="space-y-2 col-span-2 sm:col-span-1">
+                      <label htmlFor="email" className={labelClass}>Email</label>
+                      <input type="email" id="email" value={form.email} onChange={updateField("email")} className={inputClass} placeholder="john@company.com" />
+                    </div>
+                    <div className="space-y-2 col-span-2 sm:col-span-1">
+                      <label htmlFor="company" className={labelClass}>Company / Organization</label>
+                      <input type="text" id="company" value={form.company} onChange={updateField("company")} className={inputClass} placeholder="ACME Industries" />
+                    </div>
                   </div>
                   <div className="grid grid-cols-2 gap-6">
                     <div className="space-y-2 col-span-2 sm:col-span-1">
