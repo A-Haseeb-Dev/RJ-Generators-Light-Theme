@@ -53,6 +53,27 @@ export default function RentPage() {
     { title: "Prime & Backup Power", output: "Custom", desc: "Long-term prime power or full site backup, delivered, installed, and maintained by our team." },
   ];
 
+  const images = [
+    "/images/product_generator_1_1786218321227.jpg",
+    "/images/hero_generator_1_1786218289285.jpg",
+    "/images/product_generator_2_1786218335510.jpg",
+    "/images/hero_generator_2_1786218304926.jpg",
+    "/images/product_generator_3_1786218348852.jpg",
+  ];
+
+  const capacities = [
+    { kva: 25, tag: "Portable", title: "25 kVA Portable Generator", desc: "Compact and quiet — ideal for homes, small shops, events, and short-term outages." },
+    { kva: 45, tag: "Portable", title: "45 kVA Portable Generator", desc: "Reliable mid-size power for retail units, offices, and site tools." },
+    { kva: 60, tag: "Portable", title: "60 kVA Mobile Generator", desc: "Steady backup for small businesses, clinics, and construction trailers." },
+    { kva: 90, tag: "Mobile", title: "90 kVA Mobile Generator", desc: "Versatile mobile unit for workshops, telecom sites, and light industry." },
+    { kva: 100, tag: "Mobile", title: "100 kVA Mobile Generator", desc: "Multi-voltage towable unit for construction and event power." },
+    { kva: 150, tag: "Mobile", title: "150 kVA Mobile Generator", desc: "Higher-capacity trailer unit for mid-sized sites and prime power." },
+    { kva: 220, tag: "Industrial", title: "220 kVA Industrial Generator", desc: "Dependable power for factories, schools, and commercial buildings." },
+    { kva: 300, tag: "Industrial", title: "300 kVA Industrial Generator", desc: "Heavy-duty unit for plants, hospitals, and continuous operation." },
+    { kva: 400, tag: "Heavy Duty", title: "400 kVA Heavy-Duty Generator", desc: "Robust industrial power for manufacturing and critical facilities." },
+    { kva: 500, tag: "Heavy Duty", title: "500 kVA Heavy-Duty Generator", desc: "High-output unit for large sites, data centers, and full facility backup." },
+  ].map((cap, i) => ({ ...cap, image: images[i % images.length] }));
+
   const steps = [
     { icon: <Calendar className="w-6 h-6" />, title: "Request A Quote", desc: "Tell us your kVA requirement, site, and duration. We respond with availability and pricing within hours." },
     { icon: <Truck className="w-6 h-6" />, title: "Nationwide Delivery", desc: "We deliver, position, fuel, and connect the unit to your site. No heavy lifting on your side." },
@@ -145,21 +166,41 @@ export default function RentPage() {
                 Choose the right size for your load. All units are serviced, load-tested, and ready for immediate deployment.
               </p>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-              {[25, 45, 60, 90, 100, 150, 220, 300, 400, 500].map((kva, i) => (
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {capacities.map((cap, i) => (
                 <motion.div
-                  key={kva}
+                  key={cap.kva}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.05 }}
-                  className="bg-white border border-zinc-200 p-6 text-center group hover:bg-zinc-900 hover:border-zinc-900 transition-colors"
+                  className="bg-white border border-zinc-200 overflow-hidden group hover:border-blue-300 hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-300 flex flex-col"
                 >
-                  <div className="text-4xl font-bold text-zinc-900 group-hover:text-white transition-colors mb-2">
-                    {kva}
+                  <div className="relative aspect-[16/10] overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={cap.image}
+                      alt={`${cap.kva} kVA generator for rent`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute top-4 left-4 bg-zinc-950/80 text-white px-3 py-1.5 text-xs font-mono font-bold uppercase tracking-wider">
+                      {cap.tag}
+                    </div>
+                    <div className="absolute bottom-4 right-4 bg-blue-600 text-white px-4 py-2 font-mono text-lg font-bold">
+                      {cap.kva} kVA
+                    </div>
                   </div>
-                  <div className="font-mono text-xs uppercase tracking-widest text-zinc-500 group-hover:text-blue-400 transition-colors">
-                    kVA
+                  <div className="p-7 flex flex-col flex-grow">
+                    <h3 className="text-xl font-bold mb-3">{cap.title}</h3>
+                    <p className="text-zinc-600 text-sm leading-relaxed mb-6 flex-grow">{cap.desc}</p>
+                    <a
+                      href={buildWhatsAppUrl(`Hello! I want to rent a ${cap.kva} kVA generator from RJ Generators.`)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 bg-zinc-900 hover:bg-blue-600 text-white px-6 py-3.5 text-sm font-bold uppercase tracking-wider transition-colors"
+                    >
+                      Rent Now <Truck className="w-4 h-4" />
+                    </a>
                   </div>
                 </motion.div>
               ))}
