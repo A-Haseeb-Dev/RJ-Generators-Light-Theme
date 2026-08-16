@@ -129,6 +129,44 @@ export default function RentPage() {
           </div>
         </section>
 
+        {/* Available Capacities */}
+        <section className="py-20 lg:py-24 bg-zinc-50 border-b border-zinc-200">
+          <div className="container mx-auto px-6">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <div className="flex items-center justify-center gap-3 mb-6">
+                <span className="w-12 h-0.5 bg-blue-600"></span>
+                <span className="font-mono text-sm tracking-widest uppercase text-blue-600 font-bold">
+                  Available Rental Capacities
+                </span>
+                <span className="w-12 h-0.5 bg-blue-600"></span>
+              </div>
+              <h2 className="text-3xl lg:text-5xl font-bold tracking-tight mb-6">Generators available for rent.</h2>
+              <p className="text-lg text-zinc-500">
+                Choose the right size for your load. All units are serviced, load-tested, and ready for immediate deployment.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+              {[25, 45, 60, 90, 100, 150, 220, 300, 400, 500].map((kva, i) => (
+                <motion.div
+                  key={kva}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.4, delay: i * 0.05 }}
+                  className="bg-white border border-zinc-200 p-6 text-center group hover:bg-zinc-900 hover:border-zinc-900 transition-colors"
+                >
+                  <div className="text-4xl font-bold text-zinc-900 group-hover:text-white transition-colors mb-2">
+                    {kva}
+                  </div>
+                  <div className="font-mono text-xs uppercase tracking-widest text-zinc-500 group-hover:text-blue-400 transition-colors">
+                    kVA
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Rental Fleet */}
         <section className="py-24 lg:py-32 bg-white border-b border-zinc-200">
           <div className="container mx-auto px-6">
