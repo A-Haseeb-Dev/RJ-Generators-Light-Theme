@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
@@ -10,9 +10,17 @@ interface HeaderProps {
   theme?: "dark" | "light";
 }
 
+interface NavItem {
+  name: string;
+  href?: string;
+  children?: { name: string; href: string }[];
+}
+
 export function Header({ theme = "light" }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,11 +32,17 @@ export function Header({ theme = "light" }: HeaderProps) {
 
   const isDarkBg = theme === "dark" && !isScrolled && !mobileMenuOpen;
 
-  const navLinks = [
+  const navLinks: NavItem[] = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Buy Generators", href: "/products" },
-    { name: "Sell to Us", href: "/sell" },
+    {
+      name: "Services",
+      children: [
+        { name: "Buy Generators", href: "/products" },
+        { name: "Sell to Us", href: "/sell" },
+        { name: "Rent Generators", href: "/rent" },
+      ],
+    },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -61,17 +75,59 @@ export function Header({ theme = "light" }: HeaderProps) {
 
           {/* Desktop & Tablet Nav */}
           <nav className="hidden md:flex items-center gap-6 lg:gap-10">
-            {navLinks.map((link) => (
-              <Link 
-                key={link.name}
-                href={link.href} 
-                className={`text-sm font-medium transition-all hover:-translate-y-0.5 duration-200 ${
-                  isDarkBg ? "text-white/80 hover:text-white" : "text-zinc-600 hover:text-zinc-900"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.children ? (
+                <div
+                  key={link.name}
+                  className="relative"
+                  onMouseEnter={() => setServicesOpen(true)}
+                  onMouseLeave={() => setServicesOpen(false)}
+                >
+                  <button
+                    className={`flex items-center gap-1.5 text-sm font-medium transition-all hover:-translate-y-0.5 duration-200 ${
+                      isDarkBg ? "text-white/80 hover:text-white" : "text-zinc-600 hover:text-zinc-900"
+                    }`}
+                    onClick={() => setServicesOpen(!servicesOpen)}
+                    aria-expanded={servicesOpen}
+                  >
+                    {link.name}
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`} />
+                  </button>
+                  <AnimatePresence>
+                    {servicesOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute top-full left-0 mt-4 w-64 bg-white border border-zinc-200 shadow-xl shadow-zinc-900/5"
+                      >
+                        {link.children.map((child) => (
+                          <Link
+                            key={child.name}
+                            href={child.href}
+                            onClick={() => setServicesOpen(false)}
+                            className="block px-6 py-4 text-sm font-semibold text-zinc-800 hover:bg-zinc-50 hover:text-blue-600 border-b border-zinc-100 last:border-b-0 transition-colors"
+                          >
+                            {child.name}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : (
+                <Link
+                  key={link.name}
+                  href={link.href!}
+                  className={`text-sm font-medium transition-all hover:-translate-y-0.5 duration-200 ${
+                    isDarkBg ? "text-white/80 hover:text-white" : "text-zinc-600 hover:text-zinc-900"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              )
+            )}
             <a
               href={whatsappUrl}
               target="_blank"
@@ -111,7 +167,7 @@ export function Header({ theme = "light" }: HeaderProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-white md:hidden pt-24 px-6 flex flex-col"
+            className="fixed inset-0 z-40 bg-white md:hidden pt-24 px-6 flex flex-col overflow-y-auto"
           >
             <nav className="flex flex-col gap-6 mt-8">
               {navLinks.map((link, i) => (
@@ -122,14 +178,51 @@ export function Header({ theme = "light" }: HeaderProps) {
                   exit={{ opacity: 0, y: 20 }}
                   transition={{ delay: 0.1 + i * 0.1, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  <Link
-                    href={link.href}
-                    className="text-4xl font-bold tracking-tight text-zinc-900 flex items-center justify-between group"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {link.name}
-                    <ArrowRight className="w-8 h-8 text-zinc-200 group-hover:text-blue-600 transition-colors group-hover:translate-x-2" />
-                  </Link>
+                  {link.children ? (
+                    <>
+                      <button
+                        className="text-4xl font-bold tracking-tight text-zinc-900 flex items-center justify-between w-full group"
+                        onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                        aria-expanded={mobileServicesOpen}
+                      >
+                        {link.name}
+                        <ChevronDown className={`w-8 h-8 text-zinc-200 group-hover:text-blue-600 transition-transform duration-300 ${mobileServicesOpen ? "rotate-180" : ""}`} />
+                      </button>
+                      <AnimatePresence>
+                        {mobileServicesOpen && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="overflow-hidden"
+                          >
+                            <div className="mt-4 ml-4 border-l border-zinc-200 flex flex-col gap-4 pl-6">
+                              {link.children.map((child) => (
+                                <Link
+                                  key={child.name}
+                                  href={child.href}
+                                  className="text-2xl font-bold text-zinc-700 hover:text-blue-600 transition-colors"
+                                  onClick={() => setMobileMenuOpen(false)}
+                                >
+                                  {child.name}
+                                </Link>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </>
+                  ) : (
+                    <Link
+                      href={link.href!}
+                      className="text-4xl font-bold tracking-tight text-zinc-900 flex items-center justify-between group"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {link.name}
+                      <ArrowRight className="w-8 h-8 text-zinc-200 group-hover:text-blue-600 transition-colors group-hover:translate-x-2" />
+                    </Link>
+                  )}
                 </motion.div>
               ))}
             </nav>
@@ -138,7 +231,7 @@ export function Header({ theme = "light" }: HeaderProps) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ delay: 0.5, duration: 0.4 }}
-              className="mt-auto mb-12"
+              className="mt-auto mb-12 pt-10"
             >
               <div className="w-full h-px bg-zinc-100 mb-8" />
               <div className="flex flex-col gap-4">
