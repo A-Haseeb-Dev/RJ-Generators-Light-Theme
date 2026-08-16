@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Shield, Zap, Wrench, Hexagon, Activity, Cpu, Database, Anchor, Factory, Network, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Shield, Zap, Wrench, Hexagon, Activity, Cpu, Database, Anchor, Factory, Network, CheckCircle2, Cog } from "lucide-react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
@@ -183,6 +183,25 @@ export default function Home() {
                       <p className="text-zinc-400 leading-relaxed">
                         Upgrade to a newer, more efficient unit and we will deduct the value of your old generator from the price. One phone call handles everything.
                       </p>
+                    </div>
+                  </div>
+                  <div className="group bg-zinc-900 border border-zinc-800 overflow-hidden hover:bg-zinc-800/50 transition-colors">
+                    <div className="relative aspect-[16/10] overflow-hidden">
+                      <Image src="/images/maintenance_technician_1786218881705.jpg" alt="Generator repair and maintenance services" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent"></div>
+                    </div>
+                    <div className="p-8 sm:p-10">
+                      <Cog className="w-8 h-8 text-blue-500 mb-8" />
+                      <h3 className="text-2xl font-bold mb-4">Repair & Maintenance</h3>
+                      <p className="text-zinc-400 leading-relaxed">
+                        Complete repair and maintenance services — servicing, troubleshooting, painting, and breakdown support. Rental units are fully covered.
+                      </p>
+                      <Link
+                        href="/repair"
+                        className="inline-flex items-center gap-2 mt-6 text-sm font-bold uppercase tracking-wider text-blue-400 hover:text-blue-300 transition-colors"
+                      >
+                        Learn More <ArrowRight className="w-4 h-4" />
+                      </Link>
                     </div>
                   </div>
                 </div>

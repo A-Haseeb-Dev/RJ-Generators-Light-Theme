@@ -41,6 +41,7 @@ export function Header({ theme = "light" }: HeaderProps) {
         { name: "Buy Generators", href: "/products" },
         { name: "Sell to Us", href: "/sell" },
         { name: "Rent Generators", href: "/rent" },
+        { name: "Repair & Maintenance", href: "/repair" },
       ],
     },
     { name: "Contact", href: "/contact" },
