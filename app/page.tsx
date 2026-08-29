@@ -8,6 +8,8 @@ import { Footer } from "@/components/footer";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
 import { HeroSlider } from "@/components/hero-slider";
 import { motion } from "motion/react";
+import reapir_maintanence from "@/public/images/Repair_and_maintanance.jpeg";
+import Instant_Cash_Payment from "@/public/images/Instant_Cash_Payment.jpeg";
 
 import { FaqAccordion } from "@/components/faq-accordion";
 import { WHATSAPP_NUMBER, buildWhatsAppUrl } from "@/lib/whatsapp";
@@ -48,7 +50,7 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="text-5xl lg:text-7xl font-bold tracking-tight text-white mb-8 leading-[1.1]"
               >
-                Buy, sell and trade generators. Fast and fair.
+                Rent, Buy, sell and trade generators. Fast and fair.
               </motion.h1>
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
@@ -69,7 +71,7 @@ export default function Home() {
                   href="/sell"
                   className="inline-flex justify-center items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-sm font-bold uppercase tracking-wider transition-colors"
                 >
-                  Sell Your Generator <ArrowUpRight className="w-4 h-4" />
+                  Rent a Generator <ArrowUpRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="/products"
@@ -135,7 +137,7 @@ export default function Home() {
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="group bg-zinc-900 border border-zinc-800 overflow-hidden hover:bg-zinc-800/50 transition-colors">
                     <div className="relative aspect-[16/10] overflow-hidden">
-                      <Image src="/images/product_generator_1_1786218321227.jpg" alt="Quality-checked generator stock" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                      <Image src="/images/150KVA.jpeg" alt="Quality-checked generator stock" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
                       <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent"></div>
                     </div>
                     <div className="p-8 sm:p-10">
@@ -148,7 +150,7 @@ export default function Home() {
                   </div>
                   <div className="group bg-zinc-900 border border-zinc-800 overflow-hidden hover:bg-zinc-800/50 transition-colors sm:translate-y-12">
                     <div className="relative aspect-[16/10] overflow-hidden">
-                      <Image src="/images/hero_generator_1_1786218289285.jpg" alt="Generator ready for valuation" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                      <Image src="/images/500KVA.jpeg" alt="Generator ready for valuation" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
                       <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent"></div>
                     </div>
                     <div className="p-8 sm:p-10">
@@ -161,7 +163,7 @@ export default function Home() {
                   </div>
                   <div className="group bg-zinc-900 border border-zinc-800 overflow-hidden hover:bg-zinc-800/50 transition-colors">
                     <div className="relative aspect-[16/10] overflow-hidden">
-                      <Image src="/images/product_generator_2_1786218335510.jpg" alt="Generators we buy for instant cash" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                      <Image src={Instant_Cash_Payment} alt="Generators we buy for instant cash" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
                       <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent"></div>
                     </div>
                     <div className="p-8 sm:p-10">
@@ -174,7 +176,7 @@ export default function Home() {
                   </div>
                   <div className="group bg-zinc-900 border border-zinc-800 overflow-hidden hover:bg-zinc-800/50 transition-colors sm:translate-y-12">
                     <div className="relative aspect-[16/10] overflow-hidden">
-                      <Image src="/images/hero_generator_2_1786218304926.jpg" alt="Trade-in upgrade generator" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                      <Image src="/images/300KVA.jpeg" alt="Trade-in upgrade generator" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
                       <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent"></div>
                     </div>
                     <div className="p-8 sm:p-10">
@@ -187,7 +189,7 @@ export default function Home() {
                   </div>
                   <div className="group bg-zinc-900 border border-zinc-800 overflow-hidden hover:bg-zinc-800/50 transition-colors">
                     <div className="relative aspect-[16/10] overflow-hidden">
-                      <Image src="/images/maintenance_technician_1786218881705.jpg" alt="Generator repair and maintenance services" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                      <Image src={reapir_maintanence} alt="Generator repair and maintenance services" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
                       <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent"></div>
                     </div>
                     <div className="p-8 sm:p-10">
@@ -213,7 +215,7 @@ export default function Home() {
         {/* Products Showcase Teaser */}
         <section className="relative py-24 lg:py-32 bg-zinc-950 border-b border-zinc-200 overflow-hidden">
           <div className="absolute inset-0">
-            <Image src="/images/product_generator_2_1786218335510.jpg" alt="Generators in stock" fill sizes="100vw" className="object-cover opacity-25" referrerPolicy="no-referrer" />
+            <Image src="/images/400KVA.jpeg" alt="Generators in stock" fill sizes="100vw" className="object-cover opacity-25" referrerPolicy="no-referrer" />
             <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/80 via-zinc-950/70 to-zinc-950/90"></div>
           </div>
           <div className="container mx-auto px-6 text-center max-w-3xl relative z-10">
@@ -308,10 +310,10 @@ export default function Home() {
             
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { title: "Diesel Generators", desc: "All makes and models from 5kVA to 3000kVA, new or used.", icon: <Database className="w-6 h-6" />, image: "/images/product_generator_3_1786218348852.jpg" },
-                { title: "Portable & Mobile Units", desc: "Towable and containerized generators for construction and events.", icon: <Activity className="w-6 h-6" />, image: "/images/hero_generator_1_1786218289285.jpg" },
-                { title: "Gas & Dual-Fuel Units", desc: "Natural gas, LPG, and biogas generators with clean output.", icon: <Factory className="w-6 h-6" />, image: "/images/hero_generator_2_1786218304926.jpg" },
-                { title: "Industrial & Marine", desc: "Heavy-duty, marine-grade, and custom-engineered systems.", icon: <Network className="w-6 h-6" />, image: "/images/product_generator_2_1786218335510.jpg" }
+                { title: "Diesel Generators", desc: "All makes and models from 5kVA to 3000kVA, new or used.", icon: <Database className="w-6 h-6" />, image: "/images/220KVA.jpeg" },
+                { title: "Portable & Mobile Units", desc: "Towable and containerized generators for construction and events.", icon: <Activity className="w-6 h-6" />, image: "/images/500KVA.jpeg" },
+                { title: "Gas & Dual-Fuel Units", desc: "Natural gas, LPG, and biogas generators with clean output.", icon: <Factory className="w-6 h-6" />, image: "/images/300KVA.jpeg" },
+                { title: "Industrial & Marine", desc: "Heavy-duty, marine-grade, and custom-engineered systems.", icon: <Network className="w-6 h-6" />, image: "/images/400KVA.jpeg" }
               ].map((industry, i) => (
                 <motion.div 
                   key={i} 
@@ -371,7 +373,7 @@ export default function Home() {
               </div>
               <div className="relative aspect-square lg:aspect-auto lg:h-[600px] bg-zinc-200">
                 <Image 
-                  src="/images/maintenance_technician_1786218881705.jpg" 
+                  src="/images/500KVA.jpeg" 
                   alt="Technician inspecting a generator during valuation" 
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw" 

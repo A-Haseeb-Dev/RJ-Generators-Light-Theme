@@ -54,11 +54,16 @@ export default function RentPage() {
   ];
 
   const images = [
-    "/images/product_generator_1_1786218321227.jpg",
-    "/images/hero_generator_1_1786218289285.jpg",
-    "/images/product_generator_2_1786218335510.jpg",
-    "/images/hero_generator_2_1786218304926.jpg",
-    "/images/product_generator_3_1786218348852.jpg",
+    "/images/25KVA.jpeg",
+    "/images/45KVA.jpeg",
+    "/images/60KVA.jpeg",
+    "/images/90KVA.jpeg",
+    "/images/100KVA.jpeg",
+    "/images/150KVA.jpeg",
+    "/images/220KVA.jpeg",
+    "/images/300KVA.jpeg",
+    "/images/400KVA.jpeg",
+    "/images/500KVA.jpeg",
   ];
 
   const capacities = [
@@ -91,7 +96,7 @@ export default function RentPage() {
           <div className="absolute inset-0 z-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/hero_generator_1_1786218289285.jpg"
+              src="/images/500KVA.jpeg"
               alt="Generator available for rent"
               className="w-full h-full object-cover opacity-30"
             />

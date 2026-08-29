@@ -76,7 +76,7 @@ export default function SellPage() {
           <div className="absolute inset-0 z-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/maintenance_technician_1786218881705.jpg"
+              src="/images/100KVA.jpeg"
               alt="Technician inspecting a generator we buy"
               className="w-full h-full object-cover opacity-30"
             />

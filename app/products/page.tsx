@@ -14,43 +14,103 @@ export default function ProductsPage() {
   const products = [
     {
       id: 1,
-      name: "HD-Series",
+      name: "500 kVA Heavy-Duty Generator",
       type: "Diesel · For Sale",
-      output: "500kVA - 2500kVA",
+      output: "500 kVA",
       condition: "New & Refurbished",
-      description: "Heavy-duty diesel generators built for continuous operation. Fully load-tested, certified, and ready for immediate delivery with a written warranty.",
-      image: "/images/product_generator_1_1786218321227.jpg",
+      description: "High-output diesel generator built for continuous operation. Fully load-tested, certified, and ready for large sites, data centers, and full facility backup.",
+      image: "/images/500KVA.jpeg",
       features: ['200-Point Inspection', 'Sound Attenuated Enclosures', 'Backed by Warranty']
     },
     {
       id: 2,
-      name: "NG-Series",
-      type: "Natural Gas · For Sale",
-      output: "200kVA - 1000kVA",
+      name: "400 kVA Heavy-Duty Generator",
+      type: "Diesel · For Sale",
+      output: "400 kVA",
       condition: "New & Refurbished",
-      description: "Clean, efficient natural gas generators ideal for urban environments and long-term running. Low emissions and extended service intervals included.",
-      image: "/images/hero_generator_2_1786218304926.jpg",
-      features: ['Ultra-Low Emissions', 'Extended Service Intervals', 'Certified & Load-Tested']
+      description: "Robust industrial power for manufacturing and critical facilities. Certified, load-tested, and ready for immediate delivery.",
+      image: "/images/400KVA.jpeg",
+      features: ['Heavy-Duty Enclosure', 'Load-Tested & Certified', 'Backed by Warranty']
     },
     {
       id: 3,
-      name: "MR-Series",
-      type: "Mobile & Portable · For Sale",
-      output: "50kVA - 500kVA",
+      name: "300 kVA Industrial Generator",
+      type: "Diesel · For Sale",
+      output: "300 kVA",
       condition: "Refurbished",
-      description: "Towable, ruggedized generators for construction sites, events, and emergency deployment. Multi-voltage capability and DOT-approved trailers.",
-      image: "/images/product_generator_3_1786218348852.jpg",
-      features: ['DOT Approved Trailer', 'Multi-voltage Selector', '110% Fluid Containment']
+      description: "Heavy-duty unit for plants, hospitals, and continuous operation. Fully serviced with a written performance guarantee.",
+      image: "/images/300KVA.jpeg",
+      features: ['Continuous-Rated Duty', 'Full Service History', 'Warranty Included']
     },
     {
       id: 4,
-      name: "MC-Series",
-      type: "Marine & Commercial · For Sale",
-      output: "100kVA - 800kVA",
+      name: "220 kVA Industrial Generator",
+      type: "Diesel · For Sale",
+      output: "220 kVA",
       condition: "New & Used",
-      description: "Marine-grade generators for offshore platforms, commercial vessels, and coastal installations. Corrosion-resistant and class-certified.",
-      image: "/images/hero_generator_1_1786218289285.jpg",
-      features: ['Corrosion-Resistant Coating', 'Keel Cooling Compatibility', 'Marine Society Certified']
+      description: "Dependable power for factories, schools, and commercial buildings. Inspected, serviced, and ready to run.",
+      image: "/images/220KVA.jpeg",
+      features: ['200-Point Inspection', 'Ready to Run', 'Backed by Warranty']
+    },
+    {
+      id: 5,
+      name: "150 kVA Mobile Generator",
+      type: "Diesel · For Sale",
+      output: "150 kVA",
+      condition: "Refurbished",
+      description: "Higher-capacity trailer unit for mid-sized sites and prime power. Multi-voltage capability and rugged construction included.",
+      image: "/images/150KVA.jpeg",
+      features: ['Multi-voltage Selector', 'Load-Tested & Certified', 'Warranty Included']
+    },
+    {
+      id: 6,
+      name: "100 kVA Mobile Generator",
+      type: "Diesel · For Sale",
+      output: "100 kVA",
+      condition: "New & Used",
+      description: "Versatile mobile unit for workshops, telecom sites, and light industry. Compact, serviced, and ready for immediate deployment.",
+      image: "/images/100KVA.jpeg",
+      features: ['Compact & Reliable', 'Low Maintenance', 'Backed by Warranty']
+    },
+    {
+      id: 7,
+      name: "90 kVA Mobile Generator",
+      type: "Diesel · For Sale",
+      output: "90 kVA",
+      condition: "Refurbished",
+      description: "Flexible mobile unit for events, site tools, and light industrial loads. Fully inspected and load-tested before sale.",
+      image: "/images/90KVA.jpeg",
+      features: ['200-Point Inspection', 'Quiet-Running', 'Warranty Included']
+    },
+    {
+      id: 8,
+      name: "60 kVA Mobile Generator",
+      type: "Diesel · For Sale",
+      output: "60 kVA",
+      condition: "New & Refurbished",
+      description: "Steady backup for small businesses, clinics, and construction trailers. Compact, dependable, and easy to transport.",
+      image: "/images/60KVA.jpeg",
+      features: ['Compact Design', 'Easy Transport', 'Backed by Warranty']
+    },
+    {
+      id: 9,
+      name: "45 kVA Portable Generator",
+      type: "Diesel · For Sale",
+      output: "45 kVA",
+      condition: "Refurbished",
+      description: "Reliable mid-size power for retail units, offices, and site tools. Serviced and tested, ready for immediate use.",
+      image: "/images/45KVA.jpeg",
+      features: ['Reliable Output', 'Serviced & Tested', 'Warranty Included']
+    },
+    {
+      id: 10,
+      name: "25 kVA Portable Generator",
+      type: "Diesel · For Sale",
+      output: "25 kVA",
+      condition: "New & Used",
+      description: "Compact and quiet — ideal for homes, small shops, events, and short-term outages. Economical and easy to maintain.",
+      image: "/images/25KVA.jpeg",
+      features: ['Compact & Quiet', 'Economical Running', 'Backed by Warranty']
     }
   ];
 
@@ -157,7 +217,7 @@ export default function ProductsPage() {
             className="mt-24 bg-zinc-950 text-white overflow-hidden relative"
           >
             <div className="absolute inset-0">
-              <Image src="/images/maintenance_technician_1786218881705.jpg" alt="Technician inspecting a generator we buy" fill sizes="100vw" className="object-cover opacity-25" referrerPolicy="no-referrer" />
+              <Image src="/images/500KVA.jpeg" alt="Generators we buy" fill sizes="100vw" className="object-cover opacity-25" referrerPolicy="no-referrer" />
               <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/95 via-zinc-950/85 to-zinc-950/70"></div>
             </div>
             <div className="relative z-10 p-10 lg:p-16 flex flex-col lg:flex-row lg:items-center justify-between gap-8">

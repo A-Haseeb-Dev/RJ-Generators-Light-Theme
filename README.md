@@ -9,7 +9,7 @@ Built with **Next.js 15** (App Router) + **React 19**, styled with **Tailwind CS
 | Route | Description |
 | --- | --- |
 | `/` | Home — hero, services (quality-checked stock, valuations, instant cash payment, trade-ins), stock teaser, testimonials, generator categories, how it works, FAQ, CTA |
-| `/products` | "Buy Generators — Current Stock" catalogue with condition badges and a "We Buy Generators" valuation CTA |
+| `/products` | "Buy Generators — Current Stock" catalogue of the 10 real in-stock units (500, 400, 300, 220, 150, 100, 90, 60, 45, 25 kVA), each with its own photo, condition badge, and a "We Buy Generators" valuation CTA |
 | `/about` | Dealership story, core principles, trading stats |
 | `/sell` | "Sell to Us" — what we buy, how it works, and a sell-your-generator form |
 | `/contact` | Contact details and inquiry form (sell / buy / valuation / trade-in / parts & support) |
@@ -79,7 +79,7 @@ Update the placeholder business details in these files before going live:
 - **WhatsApp number** — `lib/whatsapp.ts` (`WHATSAPP_NUMBER` constant). This drives all WhatsApp CTAs, forms, and the floating chat button site-wide.
 - **Phone / address / email** — `components/footer.tsx`, `app/contact/page.tsx`
 - **Site title & description** — `app/layout.tsx` (metadata) and `metadata.json`
-- **Stock catalogue** — product list in `app/products/page.tsx` (names, kVA output, condition, images, features)
+- **Stock catalogue** — product list in `app/products/page.tsx` (names, kVA output, condition, images, features). The site ships with 10 real generator photos in `public/images/` named by kVA rating (`25KVA.jpeg` … `500KVA.jpeg`), plus `Repair_and_maintanance.jpeg` and `Instant_Cash_Payment.jpeg` used across the home page.
 
 ## Deployment
 

@@ -27,7 +27,7 @@ export default function RepairPage() {
           <div className="absolute inset-0 z-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/maintenance_technician_1786218881705.jpg"
+              src="/images/100KVA.jpeg"
               alt="Generator repair and maintenance technician"
               className="w-full h-full object-cover opacity-30"
             />
@@ -128,7 +128,7 @@ export default function RepairPage() {
           <div className="absolute inset-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/hero_generator_1_1786218289285.jpg"
+              src="/images/500KVA.jpeg"
               alt="Rental generator service coverage"
               className="w-full h-full object-cover opacity-20"
             />
