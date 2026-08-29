@@ -137,7 +137,7 @@ export default function Home() {
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="group bg-zinc-900 border border-zinc-800 overflow-hidden hover:bg-zinc-800/50 transition-colors">
                     <div className="relative aspect-[16/10] overflow-hidden">
-                      <Image src="/images/150KVA.jpeg" alt="Quality-checked generator stock" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                      <Image src="/images/technician-engineering-2.jpg" alt="Quality-checked generator stock" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
                       <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent"></div>
                     </div>
                     <div className="p-8 sm:p-10">
@@ -150,7 +150,7 @@ export default function Home() {
                   </div>
                   <div className="group bg-zinc-900 border border-zinc-800 overflow-hidden hover:bg-zinc-800/50 transition-colors sm:translate-y-12">
                     <div className="relative aspect-[16/10] overflow-hidden">
-                      <Image src="/images/500KVA.jpeg" alt="Generator ready for valuation" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                      <Image src="/images/business-handshake.jpg" alt="Generator ready for valuation" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
                       <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent"></div>
                     </div>
                     <div className="p-8 sm:p-10">
@@ -176,7 +176,7 @@ export default function Home() {
                   </div>
                   <div className="group bg-zinc-900 border border-zinc-800 overflow-hidden hover:bg-zinc-800/50 transition-colors sm:translate-y-12">
                     <div className="relative aspect-[16/10] overflow-hidden">
-                      <Image src="/images/300KVA.jpeg" alt="Trade-in upgrade generator" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                      <Image src="/images/hero-industrial-3.jpg" alt="Trade-in upgrade generator" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
                       <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent"></div>
                     </div>
                     <div className="p-8 sm:p-10">

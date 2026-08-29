@@ -79,7 +79,7 @@ Update the placeholder business details in these files before going live:
 - **WhatsApp number** — `lib/whatsapp.ts` (`WHATSAPP_NUMBER` constant). This drives all WhatsApp CTAs, forms, and the floating chat button site-wide.
 - **Phone / address / email** — `components/footer.tsx`, `app/contact/page.tsx`
 - **Site title & description** — `app/layout.tsx` (metadata) and `metadata.json`
-- **Stock catalogue** — product list in `app/products/page.tsx` (names, kVA output, condition, images, features). The site ships with 10 real generator photos in `public/images/` named by kVA rating (`25KVA.jpeg` … `500KVA.jpeg`), plus `Repair_and_maintanance.jpeg` and `Instant_Cash_Payment.jpeg` used across the home page.
+- **Stock catalogue** — product list in `app/products/page.tsx` (names, kVA output, condition, images, features). The site ships with 10 real generator photos in `public/images/` named by kVA rating (`25KVA.jpeg` … `500KVA.jpeg`), plus `Repair_and_maintanance.jpeg` and `Instant_Cash_Payment.jpeg` used across the home page. The hero slider, home service cards, and about page use royalty-free stock photos (downloaded into `public/images/` as `hero-industrial-*.jpg`, `technician-engineering-*.jpg`, and `business-*.jpg`) that visually match each section.
 
 ## Deployment
 
