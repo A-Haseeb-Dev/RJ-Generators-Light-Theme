@@ -66,7 +66,7 @@ export function Header({ theme = "light" }: HeaderProps) {
             <img
               src="/images/RJ-Logo.png"
               alt="RJ Generator"
-              className="h-8 md:h-10 w-auto object-contain transition-transform group-hover:scale-105"
+              className="h-14 md:h-16 w-auto object-contain transition-transform group-hover:scale-105"
             />
           </Link>
 
