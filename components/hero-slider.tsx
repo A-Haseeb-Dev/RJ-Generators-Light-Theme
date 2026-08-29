@@ -5,9 +5,9 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 
 const images = [
-  "/images/hero-industrial-1.jpg",
-  "/images/hero-industrial-2.jpg",
-  "/images/hero-industrial-3.jpg",
+  "/images/hero-industrial-1.png",
+  "/images/hero-industrial-2.png",
+  "/images/hero-industrial-3.png",
 ];
 
 export function HeroSlider() {

@@ -59,7 +59,7 @@ export default function AboutPage() {
               className="relative aspect-[4/3] bg-zinc-100 overflow-hidden"
             >
               <Image
-                src="/images/hero-industrial-1.jpg"
+                src="/images/hero-industrial-1.png"
                 alt="Generator stock at RJ Generators"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -75,7 +75,7 @@ export default function AboutPage() {
               className="relative aspect-[4/3] bg-zinc-100 overflow-hidden md:translate-y-12"
             >
               <Image
-                src="/images/hero-industrial-2.jpg"
+                src="/images/hero-industrial-2.png"
                 alt="Quality-checked generators for sale"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -155,7 +155,7 @@ export default function AboutPage() {
                 className="group bg-white border border-zinc-200 overflow-hidden"
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
-                  <Image src="/images/business-payment-3.jpg" alt="Fast payment and support" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                  <Image src="/images/business-payment-3.png" alt="Fast payment and support" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
                 </div>
                 <div className="p-8">
                   <Wrench className="w-10 h-10 text-blue-600 mb-6" />
