@@ -169,19 +169,21 @@ export default function ProductsPage() {
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1.5 text-xs font-mono font-bold uppercase shadow-sm">
-                    {product.type}
-                  </div>
-                  <div className="absolute top-4 right-4 bg-white text-zinc-900 px-3 py-1.5 text-xs font-mono font-bold uppercase shadow-sm">
-                    {product.condition}
-                  </div>
                 </div>
                 <div className="p-8 lg:p-10 flex flex-col flex-grow">
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-6">
-                    <h3 className="text-2xl font-bold tracking-tight">{product.name}</h3>
-                    <div className="font-mono text-sm text-zinc-600 bg-zinc-100 border border-zinc-200 px-3 py-1 whitespace-nowrap">
+                  <div className="flex flex-wrap items-center gap-2 mb-5">
+                    <span className="bg-blue-600 text-white px-3 py-1.5 text-xs font-mono font-bold uppercase shadow-sm">
+                      {product.type}
+                    </span>
+                    <span className="bg-zinc-100 border border-zinc-200 text-zinc-900 px-3 py-1.5 text-xs font-mono font-bold uppercase shadow-sm">
+                      {product.condition}
+                    </span>
+                    <span className="font-mono text-sm text-zinc-600 bg-zinc-100 border border-zinc-200 px-3 py-1 whitespace-nowrap ml-auto">
                       {product.output}
-                    </div>
+                    </span>
+                  </div>
+                  <div className="mb-6">
+                    <h3 className="text-2xl font-bold tracking-tight">{product.name}</h3>
                   </div>
                   <p className="text-zinc-600 mb-8 leading-relaxed flex-grow">
                     {product.description}
