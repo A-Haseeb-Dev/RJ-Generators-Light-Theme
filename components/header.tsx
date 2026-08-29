@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
+import { Menu, X, ArrowRight, ChevronDown, Zap } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
@@ -62,10 +62,10 @@ export function Header({ theme = "light" }: HeaderProps) {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 md:gap-3 group z-50" onClick={() => setMobileMenuOpen(false)}>
-            <div className={`w-8 h-8 md:w-10 md:h-10 flex items-center justify-center font-mono text-xs md:text-sm font-bold tracking-tighter transition-colors ${
+            <div className={`w-8 h-8 md:w-10 md:h-10 flex items-center justify-center transition-colors ${
               isDarkBg ? "bg-white text-zinc-900 group-hover:bg-blue-600 group-hover:text-white" : "bg-zinc-900 text-white group-hover:bg-blue-600"
             }`}>
-              RJ
+              <Zap className="w-4 h-4 md:w-5 md:h-5" strokeWidth={2.5} />
             </div>
             <span className={`text-lg md:text-xl font-semibold tracking-tight uppercase transition-colors ${
               isDarkBg ? "text-white" : "text-zinc-900"
