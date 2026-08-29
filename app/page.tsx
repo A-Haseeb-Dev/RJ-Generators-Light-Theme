@@ -310,10 +310,10 @@ export default function Home() {
             
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { title: "Diesel Generators", desc: "All makes and models from 5kVA to 3000kVA, new or used.", icon: <Database className="w-6 h-6" />, image: "/images/220KVA.jpeg" },
-                { title: "Portable & Mobile Units", desc: "Towable and containerized generators for construction and events.", icon: <Activity className="w-6 h-6" />, image: "/images/500KVA.jpeg" },
-                { title: "Gas & Dual-Fuel Units", desc: "Natural gas, LPG, and biogas generators with clean output.", icon: <Factory className="w-6 h-6" />, image: "/images/300KVA.jpeg" },
-                { title: "Industrial & Marine", desc: "Heavy-duty, marine-grade, and custom-engineered systems.", icon: <Network className="w-6 h-6" />, image: "/images/400KVA.jpeg" }
+                { title: "Diesel Generators", desc: "All makes and models from 5kVA to 3000kVA, new or used.", icon: <Database className="w-6 h-6" />, image: "/images/Diesel-Generators.png" },
+                { title: "Portable & Mobile Units", desc: "Towable and containerized generators for construction and events.", icon: <Activity className="w-6 h-6" />, image: "/images/Portable-Mobile-Units.png" },
+                { title: "Gas & Dual-Fuel Units", desc: "Natural gas, LPG, and biogas generators with clean output.", icon: <Factory className="w-6 h-6" />, image: "/images/Gas-Dual-Fuel-Units.png" },
+                { title: "Industrial & Marine", desc: "Heavy-duty, marine-grade, and custom-engineered systems.", icon: <Network className="w-6 h-6" />, image: "/images/Industrial-Marine.png" }
               ].map((industry, i) => (
                 <motion.div 
                   key={i} 
