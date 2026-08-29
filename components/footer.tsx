@@ -53,6 +53,10 @@ export function Footer() {
                 <span>+92 323 3287874</span>
               </li>
               <li className="flex items-center gap-3">
+                <Phone className="w-4 h-4 text-blue-500 shrink-0" />
+                <span>+92 322 8195965</span>
+              </li>
+              <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-blue-500 shrink-0" />
                 <span>sales@rjgenerators.com</span>
               </li>

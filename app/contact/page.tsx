@@ -100,7 +100,7 @@ export default function ContactPage() {
                       <div>
                         <h3 className="font-bold mb-1">Phone</h3>
                         <p className="text-zinc-600 text-sm">Buy & Sell: +92 323 3287874</p>
-                        <p className="text-zinc-600 text-sm">Support: +92 323 3287874</p>
+                        <p className="text-zinc-600 text-sm">Support: +92 322 8195965</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-4">
