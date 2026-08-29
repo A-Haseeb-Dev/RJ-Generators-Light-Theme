@@ -373,7 +373,7 @@ export default function Home() {
               </div>
               <div className="relative aspect-square lg:aspect-auto lg:h-[600px] bg-zinc-200">
                 <Image 
-                  src="/images/500KVA.jpeg" 
+                  src="/images/Sell-Steps.png" 
                   alt="Technician inspecting a generator during valuation" 
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw" 
