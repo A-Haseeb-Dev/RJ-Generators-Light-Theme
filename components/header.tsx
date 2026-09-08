@@ -47,7 +47,7 @@ export function Header({ theme = "light" }: HeaderProps) {
     { name: "Contact", href: "/contact" },
   ];
 
-  const whatsappUrl = buildWhatsAppUrl("Hello! I want to buy or sell a generator with RJ Generators.");
+  const whatsappUrl = buildWhatsAppUrl("Connect with our representative on whatsapp to get a quote for generator.");
 
   return (
     <header

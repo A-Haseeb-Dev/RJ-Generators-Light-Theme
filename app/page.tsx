@@ -15,7 +15,7 @@ import { FaqAccordion } from "@/components/faq-accordion";
 import { WHATSAPP_NUMBER, buildWhatsAppUrl } from "@/lib/whatsapp";
 
 export default function Home() {
-  const whatsappUrl = buildWhatsAppUrl("Hello! I am interested in buying or selling a generator with RJ Generators.");
+  const whatsappUrl = buildWhatsAppUrl("Connect with our representative on whatsapp to get a quote for generator.");
 
   return (
     <div className="min-h-screen bg-white flex flex-col font-sans text-zinc-900 selection:bg-blue-500/3">

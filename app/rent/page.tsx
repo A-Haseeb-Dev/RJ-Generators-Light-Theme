@@ -144,7 +144,7 @@ export default function RentPage() {
                 Get A Rental Quote
               </a>
               <a
-                href={buildWhatsAppUrl("Hello! I want to rent a generator from RJ Generators.")}
+                href={buildWhatsAppUrl("Connect with our representative on whatsapp to get a quote for generator. I want to rent a generator.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex justify-center items-center gap-2 bg-white text-zinc-900 hover:bg-zinc-100 px-8 py-4 text-sm font-bold uppercase tracking-wider transition-colors"
@@ -199,7 +199,7 @@ export default function RentPage() {
                     <h3 className="text-xl font-bold mb-3">{cap.title}</h3>
                     <p className="text-zinc-600 text-sm leading-relaxed mb-6 flex-grow">{cap.desc}</p>
                     <a
-                      href={buildWhatsAppUrl(`Hello! I want to rent a ${cap.kva} kVA generator from RJ Generators.`)}
+                      href={buildWhatsAppUrl(`Connect with our representative on whatsapp to get a quote for generator. I want to rent a ${cap.kva} kVA generator.`)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-2 bg-zinc-900 hover:bg-blue-600 text-white px-6 py-3.5 text-sm font-bold uppercase tracking-wider transition-colors"
@@ -405,7 +405,7 @@ export default function RentPage() {
               Message us on WhatsApp and we will have a unit at your site fast.
             </p>
             <a
-              href={buildWhatsAppUrl("Hello! I want to rent a generator from RJ Generators.")}
+              href={buildWhatsAppUrl("Connect with our representative on whatsapp to get a quote for generator. I want to rent a generator.")}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-white hover:bg-zinc-100 text-blue-900 px-10 py-5 text-sm font-bold uppercase tracking-wider transition-colors shadow-xl shadow-blue-900/20"

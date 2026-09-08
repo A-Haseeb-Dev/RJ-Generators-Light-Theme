@@ -75,7 +75,7 @@ export default function RepairPage() {
                 Explore Services
               </a>
               <a
-                href={buildWhatsAppUrl("Hello! I need generator repair or maintenance services from RJ Generators.")}
+                href={buildWhatsAppUrl("Connect with our representative on whatsapp to get a quote for generator. I need repair or maintenance services.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex justify-center items-center gap-2 bg-white text-zinc-900 hover:bg-zinc-100 px-8 py-4 text-sm font-bold uppercase tracking-wider transition-colors"
@@ -171,7 +171,7 @@ export default function RepairPage() {
                   confirm a diagnosis and a time slot. Prefer a maintenance plan? We offer scheduled programs too.
                 </p>
                 <a
-                  href={buildWhatsAppUrl("Hello! I want to book a generator repair or maintenance service with RJ Generators.")}
+                  href={buildWhatsAppUrl("Connect with our representative on whatsapp to get a quote for generator. I want to book a repair or maintenance service.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-sm font-bold uppercase tracking-wider transition-colors"
@@ -192,7 +192,7 @@ export default function RepairPage() {
               Don&apos;t wait for a breakdown. Message our workshop team and get your generator repaired, serviced, or repainted — fast.
             </p>
             <a
-              href={buildWhatsAppUrl("Hello! My generator needs repair or maintenance from RJ Generators.")}
+              href={buildWhatsAppUrl("Connect with our representative on whatsapp to get a quote for generator. My generator needs repair or maintenance.")}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-white hover:bg-zinc-100 text-blue-900 px-10 py-5 text-sm font-bold uppercase tracking-wider transition-colors shadow-xl shadow-blue-900/20"

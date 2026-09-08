@@ -17,7 +17,7 @@ export function FloatingWhatsApp({ phoneNumber }: FloatingWhatsAppProps) {
     return () => clearTimeout(timer);
   }, []);
 
-  const whatsappMessage = encodeURIComponent("Hello! I want to buy or sell a generator with RJ Generators.");
+  const whatsappMessage = encodeURIComponent("Connect with our representative on whatsapp to get a quote for generator.");
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
 
   return (

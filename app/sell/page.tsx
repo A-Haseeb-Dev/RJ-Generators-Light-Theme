@@ -124,7 +124,7 @@ export default function SellPage() {
                 Get A Free Valuation
               </a>
               <a
-                href={buildWhatsAppUrl("Hello! I want to sell my generator to RJ Generators.")}
+                href={buildWhatsAppUrl("Connect with our representative on whatsapp to get a quote for generator. I want to sell my generator.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex justify-center items-center gap-2 bg-white text-zinc-900 hover:bg-zinc-100 px-8 py-4 text-sm font-bold uppercase tracking-wider transition-colors"
@@ -338,7 +338,7 @@ export default function SellPage() {
               Our buying desk is available Monday - Friday, 08:00 - 18:00 (EST). Send us a photo of your unit on WhatsApp and get a valuation on the spot.
             </p>
             <a
-              href={buildWhatsAppUrl("Hello! I want to sell my generator to RJ Generators.")}
+              href={buildWhatsAppUrl("Connect with our representative on whatsapp to get a quote for generator. I want to sell my generator.")}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-white hover:bg-zinc-100 text-blue-900 px-10 py-5 text-sm font-bold uppercase tracking-wider transition-colors shadow-xl shadow-blue-900/20"
