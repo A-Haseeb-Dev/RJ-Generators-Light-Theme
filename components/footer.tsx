@@ -82,7 +82,7 @@ export function Footer() {
         <div className="pt-8 border-t border-zinc-900 text-xs font-medium text-zinc-500 flex flex-col lg:flex-row justify-between items-center gap-6">
           <div className="flex flex-col gap-1">
             <p>&copy; {new Date().getFullYear()} RJ Generators. All deals secured.</p>
-            <p className="text-zinc-950">
+            <p className="text-black">
               <a
                 href="https://k-h-tech-sol-production.vercel.app/"
                 target="_blank"
