@@ -82,7 +82,15 @@ export function Footer() {
         <div className="pt-8 border-t border-zinc-900 text-xs font-medium text-zinc-500 flex flex-col lg:flex-row justify-between items-center gap-6">
           <div className="flex flex-col gap-1">
             <p>&copy; {new Date().getFullYear()} RJ Generators. All deals secured.</p>
-            <p className="text-zinc-600">Powered By &quot;K&amp;H TECH SOL&quot;</p>
+            <p className="text-zinc-950">
+              <a
+                href="https://k-h-tech-sol-production.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Powered By &quot;K&amp;H TECH SOL&quot;
+              </a>
+            </p>
           </div>
           <ul className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2">
             {socials.map((social) => (
