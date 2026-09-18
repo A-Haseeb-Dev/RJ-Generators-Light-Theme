@@ -90,7 +90,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-bold mb-1">Address</h3>
-                        <p className="text-zinc-600 text-sm leading-relaxed">123 Industrial Park Drive,<br />Tech City, TC 10293</p>
+                        <p className="text-zinc-600 text-sm leading-relaxed">Ranchorline, Gazderabad Marwari Line<br />Near Bangi Masjid, Karachi, South</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-4">
