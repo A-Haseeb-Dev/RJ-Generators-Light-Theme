@@ -46,7 +46,7 @@ export function Footer() {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-blue-500 shrink-0 mt-0.5" />
-                <span>123 Industrial Park Drive,<br />Tech City, TC 10293</span>
+                <span>Ranchorline, Gazderabad Marwari Line Near Bandi Masjid, Karachi, South</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-blue-500 shrink-0" />
