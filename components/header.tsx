@@ -59,14 +59,14 @@ export function Header({ theme = "light" }: HeaderProps) {
           : "py-6 bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto px-2 md:px-6">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 md:gap-3 group z-50" onClick={() => setMobileMenuOpen(false)}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/RJ-Logo.png"
               alt="RJ Generator"
-              className="h-24 md:h-24 w-auto object-contain transition-transform group-hover:scale-105"
+              className="h-28 md:h-24 w-auto object-contain transition-transform group-hover:scale-105"
             />
           </Link>
 
